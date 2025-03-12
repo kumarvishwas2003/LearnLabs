@@ -22,9 +22,27 @@ const CareerPage = () => {
   ];
 
   const recommendedCourses = [
-    { title: "Advanced React Development", rating: 4.8, students: 15000 },
-    { title: "Python for Data Analysis", rating: 4.7, students: 22000 },
-    { title: "SEO Masterclass", rating: 4.6, students: 18000 },
+    {
+      title: "Advanced React Development",
+      rating: 4.8,
+      students: 15000,
+      image:
+        "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVhY3R8ZW58MHx8MHx8fDA%3D",
+    },
+    {
+      title: "Python for Data Analysis",
+      rating: 4.7,
+      students: 22000,
+      image:
+        "https://images.unsplash.com/photo-1624953587687-daf255b6b80a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHl0aG9ufGVufDB8fDB8fHww",
+    },
+    {
+      title: "SEO Masterclass",
+      rating: 4.6,
+      students: 18000,
+      image:
+        "https://images.unsplash.com/photo-1562577309-2592ab84b1bc?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
   ];
 
   const handleSubmit = async (e) => {
@@ -206,7 +224,9 @@ const CareerPage = () => {
                 key={index}
                 className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow"
               >
-                <div className="h-40 bg-gray-200"></div>
+                <div className="h-40 bg-gray-200">
+                  <img src={course.image} alt="" className="h-40 w-full object-cover"/>
+                </div>
                 <div className="p-4">
                   <h3 className="font-bold mb-2">{course.title}</h3>
                   <div className="flex items-center text-sm text-gray-600">

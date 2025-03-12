@@ -1,42 +1,41 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import Teacher from "../images/photo2.avif";
-import Guide from "../images/photo1.avif";
-import Yt from "../images/youtube2.png";
+import Teacher from "../images/learn.jpg";
+import Guide from "../images/expert.jpg";
+import Yt from "../images/youtube.jpg";
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const timeoutRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
-
   const slides = [
     {
       id: 1,
-      title: "Teach on Udemy",
-      subtitle: "Share your knowledge with millions of students worldwide.",
-      buttonText: "Start Teaching Today",
-      path: "/teach",
-      gradient:
-        "linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%)",
+      title: "Get Career Guidance",
+      subtitle:
+        "Access personalized career advice and resources to help you reach your goals.",
+      image: `${Guide}`,
+      buttonText: "Explore Career Paths",
+      path: "/career",
     },
     {
       id: 2,
-      title: "Get Career Guidance",
-      subtitle: "Personalized career advice to help reach your goals.",
-      buttonText: "Explore Career Paths",
-      path: "/career",
-      gradient:
-        "linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #93c5fd 100%)",
+      title: "Teach on LearnLabs",
+      subtitle:
+        "Share your knowledge and expertise with millions of students worldwide.",
+      image: `${Teacher}`,
+      buttonText: "Start Teaching Today",
+      path: "/teach",
     },
     {
       id: 3,
       title: "Distraction-Free YouTube",
-      subtitle: "Learn without distractions from educational videos.",
+      subtitle:
+        "Learn from educational videos without the distractions of regular YouTube.",
+      image: `${Yt}`,
       buttonText: "Watch & Learn",
       path: "/youtube",
-      gradient:
-        "linear-gradient(135deg, #ef4444 0%, #f87171 50%, #fca5a5 100%)",
     },
   ];
 
@@ -90,28 +89,23 @@ const HeroCarousel = () => {
       >
         {slides.map((slide) => (
           <div key={slide.id} className="min-w-full h-full relative">
-            <div
-              className="w-full h-full relative"
-              style={{ background: slide.gradient }}
-            >
-              <div className="absolute inset-0 bg-black/30 backdrop-blur-sm">
-                <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center">
-                  <div className="mx-auto w-full max-w-5xl px-6">
-                    <div className="bg-white/90 p-6 max-w-md rounded-xl shadow-2xl backdrop-blur-sm">
-                      <h2 className="text-3xl font-bold mb-2 text-gray-900">
-                        {slide.title}
-                      </h2>
-                      <p className="text-lg mb-4 text-gray-700">
-                        {slide.subtitle}
-                      </p>
-                      <Link
-                        to={slide.path}
-                        className="inline-block px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-                      >
-                        {slide.buttonText}
-                      </Link>
-                    </div>
-                  </div>
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="w-full h-full object-cover brightness-50 object-top
+"
+            />
+            <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center">
+              <div className="mx-auto w-full max-w-5xl px-6">
+                <div className="bg-white p-6 max-w-md">
+                  <h2 className="text-3xl font-bold mb-2">{slide.title}</h2>
+                  <p className="text-lg mb-4">{slide.subtitle}</p>
+                  <Link
+                    to={slide.path}
+                    className="bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 font-medium inline-block"
+                  >
+                    {slide.buttonText}
+                  </Link>
                 </div>
               </div>
             </div>
@@ -121,17 +115,17 @@ const HeroCarousel = () => {
 
       {/* Navigation buttons */}
       <button
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/90 p-3 rounded-full shadow-xl hover:scale-110 transition-all"
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
         onClick={goToPrevSlide}
       >
-        <ChevronLeft className="w-6 h-6 text-gray-900" />
+        <ChevronLeft />
       </button>
 
       <button
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/90 p-3 rounded-full shadow-xl hover:scale-110 transition-all"
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
         onClick={goToNextSlide}
       >
-        <ChevronRight className="w-6 h-6 text-gray-900" />
+        <ChevronRight />
       </button>
 
       {/* Indicators */}
@@ -139,10 +133,8 @@ const HeroCarousel = () => {
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentSlide
-                ? "bg-white scale-125"
-                : "bg-white/50 hover:bg-white/80"
+            className={`w-3 h-3 rounded-full ${
+              index === currentSlide ? "bg-white" : "bg-gray-400"
             }`}
             onClick={() => goToSlide(index)}
           />

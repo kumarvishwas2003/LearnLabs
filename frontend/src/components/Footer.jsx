@@ -4,8 +4,8 @@ import { Globe } from "lucide-react";
 const Footer = () => {
   const footerLinks = [
     {
-      title: "Udemy Business",
-      links: ["Teach on Udemy", "Get the app", "About us", "Contact us"],
+      title: "LearnLabs",
+      links: ["LearnLabs", "Get the app", "About us", "Contact us"],
     },
     {
       title: "Careers",
@@ -51,10 +51,11 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-8">
           <div className="text-2xl font-bold mb-4 md:mb-0">
-            <span className="text-purple-400"></span>demy
+            <span className="text-purple-400">L</span>earn
+            <span className="text-purple-400">L</span>abs
           </div>
 
-          <div className="text-gray-400">© 2025 Udemy, Inc.</div>
+          <div className="text-gray-400">© 2025 LearnLabs.</div>
         </div>
       </div>
     </footer>
