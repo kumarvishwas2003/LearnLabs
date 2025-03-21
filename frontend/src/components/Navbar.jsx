@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Search, ShoppingCart, Globe, Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [showCategories, setShowCategories] = useState(false);
@@ -69,9 +70,7 @@ const Navbar = () => {
 
       {/* Right Navigation */}
       <div className="flex items-center space-x-4">
-        <div className="hidden md:block">
-        
-        </div>
+        <div className="hidden md:block"></div>
         <div className="hidden md:block">
           <button className="px-3 py-2 hover:text-purple-700">
             Teach on LearnLabs
@@ -84,13 +83,15 @@ const Navbar = () => {
 
         <div className="hidden md:block">
           <button className="border border-black px-4 py-2 font-medium hover:bg-gray-100">
-            Log in
+            <Link to="/login">Login</Link>
           </button>
         </div>
 
         <div className="hidden md:block">
           <button className="bg-black text-white px-4 py-2 font-medium hover:bg-gray-800">
-            Sign up
+            <Link to="/signup">
+              Sign Up
+            </Link>
           </button>
         </div>
 

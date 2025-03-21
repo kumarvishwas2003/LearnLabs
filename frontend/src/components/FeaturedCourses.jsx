@@ -9,8 +9,8 @@ const FeaturedCourses = () => {
       instructor: "Dr. Angela Yu",
       rating: 4.7,
       reviewCount: 138964,
-      price: 19.99,
-      originalPrice: 149.99,
+      price: 500,
+      originalPrice: 1000,
       image:
         "https://plus.unsplash.com/premium_photo-1678566153919-86c4ba4216f1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d2ViJTIwZGV2fGVufDB8fDB8fHww",
       bestseller: true,
@@ -21,8 +21,8 @@ const FeaturedCourses = () => {
       instructor: "Kirill Eremenko, Hadelin de Ponteves",
       rating: 4.6,
       reviewCount: 156432,
-      price: 18.99,
-      originalPrice: 129.99,
+      price: 5000,
+      originalPrice: 7000,
       image:
         "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29kaW5nfGVufDB8fDB8fHww",
       bestseller: false,
@@ -33,8 +33,8 @@ const FeaturedCourses = () => {
       instructor: "Jonas Schmedtmann",
       rating: 4.8,
       reviewCount: 132596,
-      price: 17.99,
-      originalPrice: 159.99,
+      price: 3000,
+      originalPrice: 5000,
       image:
         "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8amF2YXNjcmlwdHxlbnwwfHwwfHx8MA%3D%3D",
       bestseller: true,
@@ -45,8 +45,8 @@ const FeaturedCourses = () => {
       instructor: "Maximilian Schwarzmüller",
       rating: 4.7,
       reviewCount: 145269,
-      price: 19.99,
-      originalPrice: 139.99,
+      price: 2500,
+      originalPrice: 3500,
       image:
         "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVhY3R8ZW58MHx8MHx8fDA%3D",
       bestseller: false,
@@ -105,9 +105,9 @@ const FeaturedCourses = () => {
                 </div>
 
                 <div className="flex items-center">
-                  <span className="font-bold">${course.price}</span>
+                  <span className="font-bold">₹{course.price}</span>
                   <span className="text-gray-500 line-through ml-2 text-sm">
-                    ${course.originalPrice}
+                    ₹{course.originalPrice}
                   </span>
                 </div>
               </div>
